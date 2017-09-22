@@ -1,3 +1,90 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$dark: #424652;
+$white: #FFFFFF;
+$light: #9a9da4;
+$highlight: #8bc6db;
+$border: #E9E9E9;
+
+#page_title {
+  font-weight: 600;  //字符粗细
+  text-align: center;  // 位置：居中
+  border-bottom: 1px solid $border; // 下划线： 1px 实线 颜色
+  padding: 3em 0; // 内圈： 上下 左右
+  font-size: 1rem; // 字符大小
+  text-transform: uppercase; // 字母大写
+}
+
+.skinny_wrapper {
+  width: 80%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+#posts_wrapper {
+  padding: 3em 0;
+  .post {
+    text-align: center;
+    .date {
+      font-size:  .9em;
+      margin: 0;
+    }
+    hr {
+      margin: 3em auto;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: 2em;
+      text-transform: uppercase;
+      a {
+        text-decoration: none;
+        color: $dark;
+        &:hover {
+          color: $highlight;
+        }
+      }
+    }
+  }
+}
+
+
+//-----------Pagination
+.paginations {
+  text-align: center;
+  margin:  0 0 3em 0;
+  a, .previous_page, .current, .next_page {
+    padding: .75em 1em;
+    margin: 0  .25em;
+    border-radius:  .15em;
+    line-height: 20px;
+    text-decoration: none;
+    background: $white;
+    font-weight: 700;
+    font-size:  .7em;
+    font-style: normal;
+    color: $dark;
+    &:hover {
+      background: $highlight;
+      color: $white;
+    }
+  }
+  .current {
+    background: $highlight;
+    color: $white;
+  }
+  .disabled {
+    color: #c0c0c0;
+    &:hover {
+      color: #c0c0c0;
+      background: $white;
+    }
+  }
+}
+
+.paginations:before,
+.paginations:after {
+  content: " ";
+  display: table;
+}
+
+.paginations:after {
+  clear: box;
+}
